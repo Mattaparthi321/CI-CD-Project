@@ -5,6 +5,11 @@ ansible -i hosts all -m command -a hostname
 ansible -i hosts all -m command -a uptime
 ansible -i hosts all -m command -a free
 ansible -i hosts all -m command -a "df -h"
+ansible -i hosts db1 -m  command -a "df -h"
+
+ansible -i hosts db[0:1] -m  command -a "df -h"
+ansible -i hosts db[0:1] -m  command -a "df -h" >> a.txt
+
 ansible app -s -a "yum install -y docker-engine"
 ansible -i hosts all  -a "cat /etc/passwd"
 ansible -i hosts servers:app  -a free --limit machine2
