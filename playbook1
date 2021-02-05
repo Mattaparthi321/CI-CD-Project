@@ -1,6 +1,6 @@
 ---
 - name: Install firwalld
-  hosts: appserver
+  hosts: app
   become: yes
   tasks:
    - name: Firewalld installation
